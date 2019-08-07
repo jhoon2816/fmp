@@ -17,9 +17,11 @@ router.get('/join', isNotLoggedIn, (req, res)=>{
 
 router.get('/',(req,res,next) => {
     res.render('main',{
-        title: fmp,
+        title: 'fmp',
         twits: [],
         user: req.user,
         loginError: req.flash('loginError'),
     });
 });
+
+module.exports = router;
