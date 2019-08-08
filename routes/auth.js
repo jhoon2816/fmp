@@ -62,5 +62,14 @@ router.get('/kakao/callback',passport.authenticate('kakao',{
     res.redirect('/');
 });
 
+//google authenticate
+router.get('/google',passport.authenticate('google'));
+
+router.get('/google/callback',passport.authenticate('google',{
+    failureRedirect: '/',
+}),(req,res)=>{
+    res.redirect('/');
+});
+
 module.exports = router;
 

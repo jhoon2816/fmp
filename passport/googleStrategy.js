@@ -7,8 +7,12 @@ module.exports = (passport) => {
 
     }, async (accessTocken,refreshTocken,profile,done) => {
         try{
-            const exUser = await ()
-            if()
+            const exUser = await User.find({ where: { snsId: profile.id, provider:'google' }});
+            if(exUser){
+                done(null,exUser);
+            } else {
+                done(null,);
+            }
         } catch (e) {
             console.error(error);
             done(error);
